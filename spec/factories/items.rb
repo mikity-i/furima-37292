@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
     item_name {Faker::Book.title}
-    introduction {Faker::String.random}
+    introduction {'アイテムの紹介文'}
 
     category_id {Faker::Number.between(from: 2, to: 11)}
     item_status_id {Faker::Number.between(from: 2, to: 7)}
