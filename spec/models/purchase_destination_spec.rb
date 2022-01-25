@@ -58,6 +58,11 @@ RSpec.describe PurchaseDestination, type: :model do
         @purchase_destination.valid?
         expect(@purchase_destination.errors.full_messages).to include("Phone number is invalid")
       end
+      it 'phone_numberが12桁以上では保存できない' do
+        @purchase_destination.phone_number = '123456789012'
+        @purchase_destination.valid?
+        expect(@purchase_destination.errors.full_messages).to include("Phone number is invalid")
+      end
       it 'phone_numberが全角では保存できない' do
         @purchase_destination.phone_number = '１２３４５６７８９１０'
         @purchase_destination.valid?
