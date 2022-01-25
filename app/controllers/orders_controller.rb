@@ -4,6 +4,9 @@ class OrdersController < ApplicationController
   before_action :purchase_item, only: [:index, :create]
 
   def index
+    if @item.user == current_user
+      redirect_to root_path
+    end
     @purchase_destination = PurchaseDestination.new
   end
 
