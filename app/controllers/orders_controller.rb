@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:index, :create]
+  before_action :purchase_item, only: [:index, :create]
 
   def index
     @purchase_destination = PurchaseDestination.new
@@ -28,6 +29,12 @@ class OrdersController < ApplicationController
     ).merge(
       user_id: current_user.id, item_id: params[:item_id]
     )
+  end
+
+  def purchase_item
+    if @item.purchase.present?
+      redirect_to root_path
+    end
   end
 
 end
