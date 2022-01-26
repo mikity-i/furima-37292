@@ -18,3 +18,12 @@ ja:
         item_name: 商品名
         introduction: 商品の説明
         price: 販売価格
+  activemodel:
+    attributes:
+      purchase_destination:
+        post_code: 郵便番号
+        city: 市町村名
+        block: 番地
+        phone_number: 電話番号
+        token: クレジットカード情報
+        prefecture_id: 都道府県
