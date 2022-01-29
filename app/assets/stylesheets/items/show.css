@@ -138,8 +138,17 @@
   margin-right: 5px;
 }
 
-
 /* /商品の概要 */
+
+.comment-title {
+  color: #3CCACE;
+  font-size: 23px;
+  text-align: center;
+}
+
+.comment {
+  display: flex;
+}
 
 .comment-box {
   width: 40vw;
